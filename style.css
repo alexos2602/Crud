@@ -1,0 +1,7 @@
+th , td{
+    font-size: .9rem;
+}
+
+input[name=fecha] {
+    pointer-events: none;
+ }
