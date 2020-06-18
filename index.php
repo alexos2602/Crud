@@ -3,7 +3,7 @@
 date_default_timezone_set("America/Caracas");
 $hora = date("Y-m-d H:i:s");   
 
-include ("../conexion/conexion.php");
+include ("conexion/conexion.php");
 @$id_alumno = $_GET['id'];
 $consulta="SELECT * FROM alumnos WHERE id_alumno='$id_alumno'";
 $ejecutar=mysqli_query($conexion, $consulta);
@@ -27,9 +27,9 @@ while ($row=mysqli_fetch_array($ejecutar)){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD PHP MYSQL</title>
-    <Script src="../librerias/materialize/jquery-3.5.0.min.js"></Script>
-    <Script src="../librerias/materialize/js/materialize.min.js"></Script>
-    <link rel="stylesheet" href="../librerias/materialize/css/materialize.min.css">
+    <Script src="librerias/materialize/jquery-3.5.0.min.js"></Script>
+    <Script src="librerias/materialize/js/materialize.min.js"></Script>
+    <link rel="stylesheet" href="librerias/materialize/css/materialize.min.css">
 
     <script>  
       $(document).ready(function(){
@@ -114,7 +114,7 @@ while ($row=mysqli_fetch_array($ejecutar)){
             </thead>
 
             <?php
-                include("../conexion/conexion.php");
+                include("conexion/conexion.php");
                 $sql="SELECT * FROM alumnos";
                 $ejecutar=mysqli_query($conexion, $sql);
                 while ($fila=mysqli_fetch_array($ejecutar)) {

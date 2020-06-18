@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_REQUEST['btn_guardar'])) {
-    include("../conexion/conexion.php");
+    include("conexion/conexion.php");
 
     $fecha=$_POST['fecha'];
     $nombre=$_POST['nombre'];
@@ -19,7 +19,7 @@ if (isset($_REQUEST['btn_guardar'])) {
 }
 
 if (isset($_REQUEST['btn_actualizar'])) {
-    include("../conexion/conexion.php");
+    include("conexion/conexion.php");
 
     $id=$_POST['id'];
     $fecha=$_POST['fecha'];
@@ -38,7 +38,7 @@ if (isset($_REQUEST['btn_actualizar'])) {
 }
 
 if (isset($_REQUEST['btn_eliminar'])) {
-    include("../conexion/conexion.php");
+    include("conexion/conexion.php");
 
     $id=$_POST['id'];
 
