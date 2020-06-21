@@ -2,6 +2,6 @@ th , td{
     font-size: .9rem;
 }
 
-input[name=fecha] {
+input[name=fecha],[name=id] {
     pointer-events: none;
  }

@@ -29,8 +29,6 @@ while ($row = mysqli_fetch_array($ejecutar)) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CRUD PHP MYSQL</title>
   <Script src="librerias/materialize/jquery-3.5.0.min.js"></Script>
-  <!-- <Script src="librerias/materialize/js/materialize.min.js"></Script>
-    <link rel="stylesheet" href="librerias/materialize/css/materialize.min.css"> -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <script>
@@ -59,7 +57,7 @@ while ($row = mysqli_fetch_array($ejecutar)) {
     <div class="row">
 
       <!-- formulario registro-->
-      <div class="col-md-5 py-5 " id="frm_registrar">
+      <div class="col-md-5 py-5" id="frm_registrar">
 
         <h5 class="pb-4">Registro de Alumnos</h5>
 
@@ -110,60 +108,70 @@ while ($row = mysqli_fetch_array($ejecutar)) {
 
       <!-- formulario actualizar-->
       <div class="col-md-5 py-5" id="frm_actualizar">
-        <h5 class="green-text" style="margin: 8%;">Editar información</h5><br>
+        <h5 class="pb-4">Editar información</h5><br>
         <form action="control.php" method="POST">
 
-          <div class="input-field col l5">
-            <input type="text" name="fecha" value="<?php echo $fecha; ?>" placeholder="">
-            <label for="fecha">Fecha</label>
+          <div class="form-row">
+            <div class="form-group col-sm-6">
+              <label for="fecha">Fecha</label>
+              <input type="text" name="fecha" class="form-control form-control-sm" value="<?php echo $fecha; ?>" placeholder="Ingrese fecha">
+            </div>
+
+            <div class="form-group col-sm-6">
+              <label for="id">Id</label>
+              <input type="text" name="id" class="form-control form-control-sm" value="<?php echo $id ?>" placeholder="">
+            </div>
           </div>
 
-          <div class="input-field col l4">
-            <input type="text" name="id" value="<?php echo $id ?>" placeholder="">
-            <label for="id">Id</label>
+          <div class="form-row">
+            <div class="form-group col-sm-6">
+              <label for="nombre">Nombre</label>
+              <input type="text" name="nombre" class="form-control form-control-sm" value="<?php echo $nombre ?>" placeholder="">
+            </div>
+
+            <div class="form-group col-sm-6">
+              <label for="apellidos">Apellidos</label>
+              <input type="text" name="apellidos" class="form-control form-control-sm" value="<?php echo $apellidos ?>" placeholder="">
+            </div>
           </div>
 
-          <div class="input-field col l12">
-            <input type="text" name="nombre" value="<?php echo $nombre ?>" placeholder="">
-            <label for="nombre">Nombre</label>
+          <div class="form-row">
+            <div class="form-group col-sm-6">
+              <label for="edad">Edad</label>
+              <input type="text" name="edad" class="form-control form-control-sm" value="<?php echo $edad ?>" placeholder="">
+            </div>
+
+            <div class="form-group col-sm-6">
+              <label for="grado">Grado</label>
+              <input type="text" name="grado" class="form-control form-control-sm" value="<?php echo $grado ?>" placeholder="">
+            </div>
           </div>
 
-          <div class="input-field col l12">
-            <input type="text" name="apellidos" value="<?php echo $apellidos ?>" placeholder="">
-            <label for="apellidos">Apellidos</label>
+          <div class="form-row">
+            <div class="col-md-6">
+              <label for="turno">Turno</label>
+              <input type="text" name="turno" class="form-control form-control-sm" value="<?php echo $turno ?>" placeholder="">
+            </div>
           </div>
 
-          <div class="input-field col l4">
-            <input type="text" name="edad" value="<?php echo $edad ?>" placeholder="">
-            <label for="edad">Edad</label>
-          </div>
 
-          <div class="input-field col l4">
-            <input type="text" name="grado" value="<?php echo $grado ?>" placeholder="">
-            <label for="grado">Grado</label>
-          </div>
+          <div class="row justify-content-center">
+            <div class="col-auto">
+              <button class="btn btn-primary mt-4" name="btn_actualizar">
+                Actualizar
+              </button>
+            </div>
 
-          <div class="input-field col l4">
-            <input type="text" name="turno" value="<?php echo $turno ?>" placeholder="">
-            <label for="turno">Turno</label>
-          </div>
+            <div class="col-auto">
+              <button class="btn btn-danger mt-4" name="btn_eliminar">
+                Eliminar
+              </button>
+            </div>
 
-          <div class="input-field col l4">
-            <button class="btn-small teal accent-4" name="btn_actualizar">
-              <i class="center">Actualiza</i>
-            </button>
-          </div>
+            <div class="col-auto">
+              <a href="index.php" class="btn btn-secondary mt-4" name="btn_guardar">Regresar</a>
+            </div>
 
-          <div class="input-field col l4">
-            <button class="btn-small  teal darken-4" name="btn_eliminar">
-              <i class="center">Eliminar</i>
-            </button>
-          </div>
-
-          <div class="input-field col l4">
-            <a href="index.php" class="btn-small waves-light" name="btn_guardar">
-              <i class="center">Regresar</i>
-            </a>
           </div>
 
         </form>
@@ -204,7 +212,7 @@ while ($row = mysqli_fetch_array($ejecutar)) {
                 <td><?php echo $fila[5]; ?></td>
                 <td><?php echo $fila[6]; ?></td>
                 <td>
-                  <a class="btn-small center white-text" href="index.php?id=<?php echo $fila[0]; ?>">Editar</a>
+                  <a class="btn btn-primary btn-sm" href="index.php?id=<?php echo $fila[0]; ?>">Editar</a>
                 </td>
               </tr>
             </tbody>
